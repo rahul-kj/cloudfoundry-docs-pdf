@@ -49,9 +49,10 @@ execute() {
 
 	clone_repos
 	cd docs-book-cloudfoundry
+	cp ../pdf_header.html $PWD/master_middleman/source
+	
 	publish_book_local
 	java -cp ../target/PDFConfigFileGenerator-0.0.1-SNAPSHOT.jar com.rahul.learn.Application $PWD/final_app/public
-	cp ../pdf_header.html $PWD/final_app/public
 	
 	generate_pdf
 	
