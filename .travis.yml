@@ -1,0 +1,7 @@
+language: ruby
+rvm:
+- 2.0
+before_install:
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+script: ./generatePDF.sh $CF_API_URL $CF_USERNAME $CF_PASSWORD $CF_ORG $CF_SPACE $APP_NAME
